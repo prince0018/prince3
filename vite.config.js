@@ -5,5 +5,5 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),tailwindcss()],
-  base: '/prince3', // Use your repo name with trailing slash
+  base: './', // Use your repo name with trailing slash
 })
