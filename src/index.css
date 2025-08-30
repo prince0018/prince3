@@ -55,6 +55,27 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  display: block;        /* stop centering */
+  min-width: 0;
+  min-height: 0;
+  background: #0f172a;   /* Tailwind slate-950 */
+}
+
+#root {
+  display: block;
+  max-width: none;       /* remove Vite’s 1280px cap */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
