@@ -406,14 +406,15 @@ export default function AzureStylePortfolio() {
                 onClick={() => setActiveTag(t)}
                 className={`rounded-full px-3 py-1 text-xs backdrop-blur border ${
                   activeTag === t
-                    ? "bg-sky-500/30 border-sky-500/50 text-white"
-                    : "bg-white/5 border-white/15 text-white/80 hover:bg-white/10"
+                    ? "bg-sky-600/60 border-sky-500/50 text-white"
+                    : "bg-slate-800 border-slate-600 text-white/80 hover:bg-slate-700"
                 }`}
               >
                 {t}
               </button>
             ))}
           </div>
+
         </div>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
