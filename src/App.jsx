@@ -333,21 +333,11 @@ export default function App() {
       >
         <div className="grid gap-5">
           <div className="grid gap-5 lg:grid-cols-3">
-            {education.map((item, index) => (
+            {education.map((item) => (
               <div
                 key={item.school}
                 className="relative rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface)] p-5 shadow-sm"
               >
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <span className="rounded-full border border-[var(--line)] bg-[var(--surface-raised)] px-3 py-1 text-xs font-semibold text-[var(--text-subtle)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  {index === 0 && (
-                    <span className="rounded-full bg-[var(--accent)] px-3 py-1 text-xs font-semibold text-white">
-                      Latest
-                    </span>
-                  )}
-                </div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
                   {item.period}
                 </p>
