@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How internet requests travel</title>
+  <desc id="desc">A browser request flowing through DNS, ISP, internet backbone, web server, and back to the browser.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7fbff" />
+      <stop offset="100%" stop-color="#dff2ff" />
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0078d4" />
+      <stop offset="100%" stop-color="#004578" />
+    </linearGradient>
+    <filter id="shadow" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="180%" width="180%" x="-40%" y="-40%">
+      <feDropShadow dx="0" dy="18" flood-color="#004e92" flood-opacity="0.16" stdDeviation="24" />
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="36" />
+  <circle cx="1080" cy="95" r="145" fill="#b9dcff" opacity="0.45" />
+  <circle cx="130" cy="590" r="180" fill="#8cc8ff" opacity="0.22" />
+  <text fill="#0f172a" font-family="Aptos, Segoe UI, sans-serif" font-size="54" font-weight="800" x="84" y="104">
+    How the Internet Works
+  </text>
+  <text fill="#4b6478" font-family="Aptos, Segoe UI, sans-serif" font-size="24" x="88" y="148">
+    A browser request is resolved, routed, processed, and returned as packets.
+  </text>
+  <g filter="url(#shadow)">
+    <rect fill="#ffffff" height="330" rx="32" width="1016" x="92" y="224" />
+    <g fill="url(#card)">
+      <rect height="118" rx="24" width="158" x="142" y="330" />
+      <rect height="118" rx="24" width="158" x="342" y="330" />
+      <rect height="118" rx="24" width="158" x="542" y="330" />
+      <rect height="118" rx="24" width="158" x="742" y="330" />
+      <rect height="118" rx="24" width="158" x="942" y="330" />
+    </g>
+    <g fill="none" stroke="#0078d4" stroke-linecap="round" stroke-width="8">
+      <path d="M305 389h30" />
+      <path d="M505 389h30" />
+      <path d="M705 389h30" />
+      <path d="M905 389h30" />
+    </g>
+    <g fill="#ffffff" font-family="Aptos, Segoe UI, sans-serif" font-size="22" font-weight="700" text-anchor="middle">
+      <text x="221" y="383">Browser</text>
+      <text x="421" y="383">DNS</text>
+      <text x="621" y="383">ISP</text>
+      <text x="821" y="383">Server</text>
+      <text x="1021" y="383">Page</text>
+    </g>
+    <g fill="#dff2ff" font-family="Aptos, Segoe UI, sans-serif" font-size="15" text-anchor="middle">
+      <text x="221" y="417">asks for a site</text>
+      <text x="421" y="417">finds IP address</text>
+      <text x="621" y="417">routes packets</text>
+      <text x="821" y="417">builds response</text>
+      <text x="1021" y="417">renders content</text>
+    </g>
+  </g>
+</svg>
