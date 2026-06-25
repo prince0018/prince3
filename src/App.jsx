@@ -25,6 +25,41 @@ import { getSystemTheme } from "./utils/theme";
 
 const logoUrl = `${import.meta.env.BASE_URL}p_logo.png`;
 
+function SocialIconLink({ href, label, children }) {
+  return (
+    <a
+      className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--surface-soft)] text-[var(--text-muted)] shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      title={label}
+    >
+      {children}
+    </a>
+  );
+}
+
+function GitHubIcon() {
+  return (
+    <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.74c-2.78.62-3.37-1.38-3.37-1.38-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.64-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.4 9.4 0 0 1 12 6.93c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.95.68 1.92v2.85c0 .27.18.6.69.49A10.04 10.04 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
+      />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M6.94 8.75H3.58V20h3.36V8.75ZM7.22 5.27C7.2 4.28 6.49 3.54 5.35 3.54c-1.13 0-1.87.74-1.87 1.73 0 .97.72 1.73 1.83 1.73h.02c1.16 0 1.89-.76 1.89-1.73ZM20.52 13.55c0-3.4-1.81-4.98-4.23-4.98-1.95 0-2.82 1.07-3.31 1.82V8.75H9.62c.04 1.05 0 11.25 0 11.25h3.36v-6.28c0-.34.02-.67.12-.91.27-.67.87-1.36 1.89-1.36 1.33 0 1.86 1.02 1.86 2.51V20h3.36l.31-6.45Z" />
+    </svg>
+  );
+}
+
 export default function App() {
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState("All");
@@ -83,9 +118,9 @@ export default function App() {
       </div>
 
       <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] backdrop-blur-xl transition-colors duration-300">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-5 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:gap-5 sm:px-5">
           <a
-            className="flex items-center gap-3"
+            className="flex min-w-0 flex-1 items-center gap-3"
             href="#top"
             onClick={(event) => smoothScrollTo(event, "#top")}
             aria-label="Prince Sharma home"
@@ -93,13 +128,13 @@ export default function App() {
             <img
               src={logoUrl}
               alt=""
-              className="h-11 w-11 rounded-2xl object-cover shadow-sm ring-1 ring-[var(--logo-ring)]"
+              className="h-10 w-10 shrink-0 rounded-xl object-cover shadow-sm ring-1 ring-[var(--logo-ring)] sm:h-11 sm:w-11 sm:rounded-2xl"
             />
-            <div>
-              <p className="text-sm font-bold leading-tight tracking-tight text-[var(--text-strong)]">
+            <div className="min-w-0">
+              <p className="truncate text-sm font-bold leading-tight tracking-tight text-[var(--text-strong)]">
                 {profile.name}
               </p>
-              <p className="text-xs font-medium text-[var(--text-subtle)]">{profile.role}</p>
+              <p className="hidden text-xs font-medium text-[var(--text-subtle)] sm:block">{profile.role}</p>
             </div>
           </a>
           <nav className="hidden items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--nav-bg)] p-1 shadow-sm lg:flex">
@@ -114,14 +149,14 @@ export default function App() {
               </a>
             ))}
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <ThemeToggle mode={themeMode} resolvedTheme={resolvedTheme} onChange={setThemeMode} />
-            <Button href={profile.github} variant="ghost">
-              GitHub
-            </Button>
-            <Button href={profile.linkedin} variant="secondary">
-              LinkedIn
-            </Button>
+            <SocialIconLink href={profile.github} label="Open GitHub profile">
+              <GitHubIcon />
+            </SocialIconLink>
+            <SocialIconLink href={profile.linkedin} label="Open LinkedIn profile">
+              <LinkedInIcon />
+            </SocialIconLink>
           </div>
         </div>
       </header>
