@@ -118,9 +118,9 @@ export default function App() {
       </div>
 
       <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] backdrop-blur-xl transition-colors duration-300">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:gap-5 sm:px-5">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-4 sm:gap-5 sm:px-5 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
           <a
-            className="flex min-w-0 flex-1 items-center gap-3"
+            className="flex min-w-0 items-center gap-3 lg:justify-self-start"
             href="#top"
             onClick={(event) => smoothScrollTo(event, "#top")}
             aria-label="Prince Sharma home"
@@ -137,7 +137,7 @@ export default function App() {
               <p className="hidden text-xs font-medium text-[var(--text-subtle)] sm:block">{profile.role}</p>
             </div>
           </a>
-          <nav className="hidden items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--nav-bg)] p-1 shadow-sm lg:flex">
+          <nav className="hidden items-center gap-1 justify-self-center rounded-full border border-[var(--line)] bg-[var(--nav-bg)] p-1 shadow-sm lg:flex">
             {navItems.map(([label, href]) => (
               <a
                 key={label}
@@ -149,7 +149,7 @@ export default function App() {
               </a>
             ))}
           </nav>
-          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 justify-self-end sm:gap-2 lg:col-start-3">
             <ThemeToggle mode={themeMode} resolvedTheme={resolvedTheme} onChange={setThemeMode} />
             <SocialIconLink href={profile.github} label="Open GitHub profile">
               <GitHubIcon />
