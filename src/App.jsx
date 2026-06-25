@@ -413,7 +413,7 @@ export default function App() {
       <Section
         id="contact"
         eyebrow="Contact"
-        title="Have a hard AI problem? Let us make it concrete."
+        title="Have a new idea? Let's make it real."
       >
         <div className="grid gap-5 rounded-[2rem] border border-[var(--line)] bg-[var(--surface)] p-6 shadow-[0_24px_70px_var(--soft-shadow)] lg:grid-cols-[0.85fr_1.15fr] lg:p-8">
           <div>
@@ -426,12 +426,6 @@ export default function App() {
                 Email:{" "}
                 <a className="font-semibold text-[var(--accent)] hover:text-[var(--accent-strong)]" href={`mailto:${profile.email}`}>
                   {profile.email}
-                </a>
-              </p>
-              <p>
-                Alt:{" "}
-                <a className="font-semibold text-[var(--accent)] hover:text-[var(--accent-strong)]" href={`mailto:${profile.altEmail}`}>
-                  {profile.altEmail}
                 </a>
               </p>
               <p>Location: {profile.location}</p>
